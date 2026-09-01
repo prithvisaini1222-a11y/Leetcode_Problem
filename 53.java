@@ -1,0 +1,16 @@
+class Solution {
+    public int maxSubArray(int[] nums) {
+        // kadans algorithm 
+        int sum = 0;
+        int res = nums[0];
+
+        for (int i=0;i<nums.length;i++)  // or nums.lenghth ki jgh Integer.MIN_VALUE likh sakte hai 
+        {
+            sum +=nums[i];
+            res = Math.max(res,sum);
+            if(sum<=0)
+            sum=0;
+        }
+        return res;
+    }
+}
